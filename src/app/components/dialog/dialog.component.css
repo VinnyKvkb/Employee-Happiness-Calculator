@@ -1,0 +1,29 @@
+button {
+  /* margin-right: 8px; */
+}
+
+#chartContainer {
+  display: inline-block;
+}
+
+#chartContainer1 {
+  display: inline-block;
+}
+
+#wrapper {
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+h1 {
+  color: Red;
+  text-align: center;
+
+}
+
+h5,
+h4 {
+
+  text-align: center;
+
+}

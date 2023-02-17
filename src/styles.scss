@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    padding: 10px;
+    margin: 17%;
+    margin-block: unset;
+    margin-top: 80px;
+
+}
+
+button {
+    margin-right: 8px;
+}
+
+.mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 36px 72px 46px 72px;
+}

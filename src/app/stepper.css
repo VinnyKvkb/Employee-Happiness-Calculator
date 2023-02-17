@@ -1,0 +1,12 @@
+button {
+    margin-right: 8px; 
+  }
+  .mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 36px 72px 46px 72px;
+}
+div{
+    margin-top: 5%;
+    width: 60%;
+    margin-left: 17%;
+}
