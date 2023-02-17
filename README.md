@@ -8,10 +8,10 @@ https://drive.google.com/file/d/1RHSFgpYCb9S9eDCDqWs9aLTzUSgpMMpR/view?usp=share
 
 Tech stack :
 -------------
-Angular
-Angualr Material
-Formely Angualr Material
-Canvas Js
-TypeScript
-Html
-Css
+Angular,
+Angualr Material,
+Formely Angualr Material,
+Canvas Js,
+TypeScript,
+Html,
+Css,
