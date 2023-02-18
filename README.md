@@ -19,10 +19,10 @@ Css,
 
 Backend End -Tech stack :
 --------------------
-Java
+Java,
 SpringBoot,
 Lombok,
-Spring Starter Validation
+Spring Starter Validation,
 Springboot Starter Web
 
 
