@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { EhcService } from './services/ehc.service';
 
 
 @Component({
@@ -103,12 +104,13 @@ export class AppComponent {
       ],
     },
   ];
+  errorMsg: any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private ehcService: EhcService) { }
 
 
   submit() {
-    //alert(JSON.stringify(this.model));
+    console.log(JSON.stringify(this.model));
     const q1 = this.model["q1"];
     const q2 = this.model["q2"];
     const q3 = this.model["q3"];
@@ -127,21 +129,28 @@ export class AppComponent {
       this.model["q3"] = 1;
     } else {
       this.model["q3"] = 0;
-    }
-    //  console.log("-1-->"+this.model['q1']);
-    //  console.log("-2-->"+this.model['q2']); 
-    //  console.log("-3-->"+this.model['q3']); 
-    //  console.log("-4-->"+this.model['q4']); 
-    //  console.log("-5-->"+this.model['q5']);  
+    } 
+    this.calculateHappinessLevels(this.model);
 
-    this.totalScore = this.model['q1'] + this.model['q2'] + this.model['q3'] + this.model['q4'] + this.model['q5'];
-    console.log("-totalScore-->" + this.totalScore);
-    this.openDialog('0ms', '0ms');
+   
   }
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+  calculateHappinessLevels(answers: any) {
+    this.ehcService.calculateHappinessLevels(answers).subscribe(result => this.readTheResponse(result),
+      error => this.errorMsg = error);
+  }
+  readTheResponse(result: number): void {
+    console.log("TotalScore::::::::::" + result);
+    if (result != undefined || result != null) {
+      this.totalScore = result;
+      this.openDialog(this.totalScore);
+    }else{
+      alert("Employee Hapinness Calculation Failed.Try Again.");
+    }
+  }
+  openDialog(totalScore:number): void {
     this.dialog.open(DialogComponent, {
       data: {
-        animal: JSON.stringify(this.totalScore),
+        animal: JSON.stringify(totalScore),
       },
 
     });

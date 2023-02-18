@@ -10,9 +10,11 @@ import { FormlyFieldStepper } from './stepper.type';
 import { CanvasJSChart } from './assets/canvas-jschart/canvas-jschart.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 //import { FormlyMatToggleModule } from '@ngx-formly/material/toggle';
 @NgModule({
   imports: [
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatStepperModule,

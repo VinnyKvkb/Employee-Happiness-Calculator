@@ -1,0 +1,1 @@
+{"ast":null,"code":"//import { environment } from 'src/environments/environment';\nexport class URLS {}\nURLS.EHC_SERVICE = 'http://localhost:8080';\nURLS.calculateHappinessLevels = URLS.EHC_SERVICE + '/ehc/calculateHappinessLevels';","map":null,"metadata":{},"sourceType":"module"}
